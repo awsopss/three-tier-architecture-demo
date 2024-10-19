@@ -1,0 +1,29 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pr:
+  branches:
+    include:
+      - main
+
+pool:
+  name: 'Chandan' # Managed node pool name
+
+stages:
+- stage: Build
+  displayName: Build 
+  jobs:
+  - job: Build
+    displayName: Build
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'dockerhub-connection'
+        repository: 'cloudops96/publish'
+        command: 'buildAndPush'
+        Dockerfile: '**/cart/Dockerfile'
+        tags: '$(Build.cart)'
+        addPipelineData: false
+        addBaseImageData: false
