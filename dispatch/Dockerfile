@@ -23,6 +23,9 @@ RUN go mod init dispatch && go mod tidy
 # Replace deprecated module
 RUN go mod edit -replace=github.com/streadway/amqp=github.com/rabbitmq/amqp091-go@v1.0.0
 
+# Download dependencies to ensure go.sum is updated
+RUN go mod download
+
 # Build the Go application
 RUN go build -o app .
 
