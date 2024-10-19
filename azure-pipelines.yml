@@ -18,25 +18,25 @@ stages:
   - job: Build
     displayName: Build
     steps:
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'dockerhub-connection'
-        repository: 'cloudops96/publish'
-        command: 'buildAndPush'
-        Dockerfile: '**/cart/Dockerfile'
-        tags: 'cart'
-        addPipelineData: false
-        addBaseImageData: false
+    # - task: Docker@2
+    #   inputs:
+    #     containerRegistry: 'dockerhub-connection'
+    #     repository: 'cloudops96/publish'
+    #     command: 'buildAndPush'
+    #     Dockerfile: '**/cart/Dockerfile'
+    #     tags: 'cart'
+    #     addPipelineData: false
+    #     addBaseImageData: false
     
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'dockerhub-connection'
-        repository: 'cloudops96/publish'
-        command: 'buildAndPush'
-        Dockerfile: '**/catalogue/Dockerfile'
-        tags: 'catalogue'
-        addPipelineData: false
-        addBaseImageData: false
+    # - task: Docker@2
+    #   inputs:
+    #     containerRegistry: 'dockerhub-connection'
+    #     repository: 'cloudops96/publish'
+    #     command: 'buildAndPush'
+    #     Dockerfile: '**/catalogue/Dockerfile'
+    #     tags: 'catalogue'
+    #     addPipelineData: false
+    #     addBaseImageData: false
     - task: Docker@2
       inputs:
         containerRegistry: 'dockerhub-connection'
@@ -47,62 +47,62 @@ stages:
         addPipelineData: false
         addBaseImageData: false 
 
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'dockerhub-connection'
-        repository: 'cloudops96/publish'
-        command: 'buildAndPush'
-        Dockerfile: '**/mongo/Dockerfile'
-        tags: 'mongo'
-        addPipelineData: false
-        addBaseImageData: false  
+    # - task: Docker@2
+    #   inputs:
+    #     containerRegistry: 'dockerhub-connection'
+    #     repository: 'cloudops96/publish'
+    #     command: 'buildAndPush'
+    #     Dockerfile: '**/mongo/Dockerfile'
+    #     tags: 'mongo'
+    #     addPipelineData: false
+    #     addBaseImageData: false  
   
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'dockerhub-connection'
-        repository: 'cloudops96/publish'
-        command: 'buildAndPush'
-        Dockerfile: '**/mysql/Dockerfile'
-        tags: 'mysql'
-        addPipelineData: false
-        addBaseImageData: false  
+    # - task: Docker@2
+    #   inputs:
+    #     containerRegistry: 'dockerhub-connection'
+    #     repository: 'cloudops96/publish'
+    #     command: 'buildAndPush'
+    #     Dockerfile: '**/mysql/Dockerfile'
+    #     tags: 'mysql'
+    #     addPipelineData: false
+    #     addBaseImageData: false  
 
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'dockerhub-connection'
-        repository: 'cloudops96/publish'
-        command: 'buildAndPush'
-        Dockerfile: '**/payment/Dockerfile'
-        tags: 'payment'
-        addPipelineData: false
-        addBaseImageData: false   
+    # - task: Docker@2
+    #   inputs:
+    #     containerRegistry: 'dockerhub-connection'
+    #     repository: 'cloudops96/publish'
+    #     command: 'buildAndPush'
+    #     Dockerfile: '**/payment/Dockerfile'
+    #     tags: 'payment'
+    #     addPipelineData: false
+    #     addBaseImageData: false   
 
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'dockerhub-connection'
-        repository: 'cloudops96/publish'
-        command: 'buildAndPush'
-        Dockerfile: '**/shipping/Dockerfile'
-        tags: 'shipping'
-        addPipelineData: false
-        addBaseImageData: false  
+    # - task: Docker@2
+    #   inputs:
+    #     containerRegistry: 'dockerhub-connection'
+    #     repository: 'cloudops96/publish'
+    #     command: 'buildAndPush'
+    #     Dockerfile: '**/shipping/Dockerfile'
+    #     tags: 'shipping'
+    #     addPipelineData: false
+    #     addBaseImageData: false  
 
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'dockerhub-connection'
-        repository: 'cloudops96/publish'
-        command: 'buildAndPush'
-        Dockerfile: '**/user/Dockerfile'
-        tags: 'user'
-        addPipelineData: false
-        addBaseImageData: false 
+    # - task: Docker@2
+    #   inputs:
+    #     containerRegistry: 'dockerhub-connection'
+    #     repository: 'cloudops96/publish'
+    #     command: 'buildAndPush'
+    #     Dockerfile: '**/user/Dockerfile'
+    #     tags: 'user'
+    #     addPipelineData: false
+    #     addBaseImageData: false 
 
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'dockerhub-connection'
-        repository: 'cloudops96/publish'
-        command: 'buildAndPush'
-        Dockerfile: '**/web/Dockerfile'
-        tags: 'web'
-        addPipelineData: false
-        addBaseImageData: false  
+    # - task: Docker@2
+    #   inputs:
+    #     containerRegistry: 'dockerhub-connection'
+    #     repository: 'cloudops96/publish'
+    #     command: 'buildAndPush'
+    #     Dockerfile: '**/web/Dockerfile'
+    #     tags: 'web'
+    #     addPipelineData: false
+    #     addBaseImageData: false  
