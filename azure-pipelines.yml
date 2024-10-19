@@ -24,6 +24,6 @@ stages:
         repository: 'cloudops96/publish'
         command: 'buildAndPush'
         Dockerfile: '**/cart/Dockerfile'
-        tags: '$(Build.cart)'
+        tags: 'cart'
         addPipelineData: false
         addBaseImageData: false
