@@ -9,7 +9,7 @@
 
 # CMD dispatch
 
-# Use Go 1.18 (or later to avoid issues with some libraries)
+# Use Go 1.18 or later to avoid issues with the 'slices' package
 FROM golang:1.18
 
 WORKDIR /go/src/app
@@ -31,6 +31,7 @@ RUN go build -o app .
 
 # Set command to run the application
 CMD ["./app"]
+
 
 
 
