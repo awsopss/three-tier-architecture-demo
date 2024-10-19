@@ -37,15 +37,15 @@ stages:
         tags: 'catalogue'
         addPipelineData: false
         addBaseImageData: false
-    # - task: Docker@2
-    #   inputs:
-    #     containerRegistry: 'dockerhub-connection'
-    #     repository: 'cloudops96/publish'
-    #     command: 'buildAndPush'
-    #     Dockerfile: '**/dispatch/Dockerfile'
-    #     tags: 'dispatch'
-    #     addPipelineData: false
-    #     addBaseImageData: false 
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'dockerhub-connection'
+        repository: 'cloudops96/publish'
+        command: 'buildAndPush'
+        Dockerfile: '**/dispatch/Dockerfile'
+        tags: 'dispatch'
+        addPipelineData: false
+        addBaseImageData: false 
 
     - task: Docker@2
       inputs:
