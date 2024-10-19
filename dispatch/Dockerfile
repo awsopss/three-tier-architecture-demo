@@ -9,25 +9,19 @@
 
 # CMD dispatch
 
-# Use Go 1.18 (or later)
+# Base Image for Dispatch Service
 FROM golang:1.18
 
-WORKDIR /go/src/app
+WORKDIR /go/src/dispatch
 
-# Copy all .go files
-COPY *.go .
+# Copy source code
+COPY . .
 
-# Initialize the module and download dependencies
-RUN go mod init dispatch && go mod tidy
+# Build the Go dispatch service
+RUN go mod tidy && go build -o dispatch .
 
-# Replace deprecated module
-RUN go mod edit -replace=github.com/streadway/amqp=github.com/rabbitmq/amqp091-go@v1.0.0
+# Expose the port for the service
+EXPOSE 8080
 
-# Download dependencies to ensure go.sum is updated
-RUN go mod download
-
-# Build the Go application
-RUN go build -o app .
-
-# Command to run the app
-CMD ["./app"]
+# Run the dispatch service
+CMD ["./dispatch"]
