@@ -1,0 +1,11 @@
+resource_group_name = "cloudops"
+environment         = "dev"
+location            = "Central India"
+node_vm_size       = "Standard_B2s"
+node_count_max     = 3
+node_count_min     = 1
+ssh_public_key      = "~/.ssh/aks-prod-sshkeys-terraform/aksprodsshkey.pub"  # Path to your public key
+ssh_private_key      = "~/.ssh/aks-prod-sshkeys-terraform/aksprodsshkey"
+acr_name           = "chandancloudops96"  # Ensure this is globally unique
+acr_sku            = "Basic"
+bastion_vm_size    = "Standard_D2s_v3"      #"Standard_B1s"
